@@ -59,7 +59,7 @@ To have code deployed in container based development use docker.
 
 ##### Setup
 
-1. You need to have docker installed if not follow the steps in (https://docs.docker.com/engine/installation/ubuntulinux/) and have the process running.
+1. You need to have docker installed and have the process running.
 2. Make sure to have the **Dockerfile, gunicorn.py and requirements.txt** all in level.
 3. If you want to use a DB then update the values for the **SQLALCHEMY_DATABASE_URI** in app_config.py with the DB info. For example for a SQL Db it would be of the following format
     **SQLALCHEMY_DATABASE_URI = 'mysql://username:password@ip-address/db_name'**
