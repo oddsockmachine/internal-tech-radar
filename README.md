@@ -41,7 +41,6 @@ sent({"category":"Tools","status":"Adopt","tech":{"description":""},"group":"clo
 
 Based on the technology used for development
    [Docker] -- For Container based development setup, download **docker**
-   [Cloud Foundry] -- For Cloud based PAAS development setup, download **[Cloud Foundry CLI]**, Create an account at the corresponding [Cloud Foundry endpoints @ THD].
 
 # Build Process
 Make sure to have [NodeJS] and [Grunt] installed to build all the assets needed for the application. Once you have the above downloaded, do the following
