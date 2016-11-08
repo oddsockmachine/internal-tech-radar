@@ -1,0 +1,88 @@
+<html ng-app="techRadarApp">
+<head>
+    <link rel="icon"
+          type="image/png"
+          href="/static/img/hd-logo.png">
+    <title>Technology Radar</title>
+</head>
+
+<body>
+
+<!--Adding the ng-app declaration to initialize AngularJS -->
+<!-- The navigation menu will get the value of the "active" variable as a class.
+     The $event.preventDefault() stops the page from jumping when a link is clicked. -->
+
+<!-- Fixed navbar -->
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" ng-controller="menuBar">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            {% raw %}
+            <a class="navbar-brand" href="#/radar/{{ title }}" style="padding:0;color:#fff;margin-right:15px">
+                <img src="/static/img/hd-logo.png" height="51" width="51" style="padding:10">
+                Technology Radar
+                <span>
+
+                {{ title | capitalize }}
+                </span>
+            </a>
+            {% endraw %}
+
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li ng-class="{ active: isActive('/groups')}"><a class="home" href="#/groups">Groups</a>
+                </li>
+            </ul>
+
+
+        </div>
+        <!--/.nav-collapse -->
+    </div>
+</nav>
+
+
+<div ng-view class="container-fluid">
+    <div class="container text-center add-padding">
+        <i class="fa fa-spinner fa-3x fa-spin"></i>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <p class="text-muted text-center ">
+            <span id="year">&copy;2015</span> www.dev-ops.de, Inc. All Rights Reserved
+        </p>
+    </div>
+</footer>
+<!-- CSS -->
+<link rel="stylesheet" href="/static/assets/css/vendor.min.css">
+<link rel="stylesheet" href="/static/assets/css/radar.min.css">
+
+<link rel="stylesheet" href="/static/css/font-awesome.min.css">
+
+<!-- vendor js -->
+<script src="/static/js/jquery/jquery.min.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+<script src="/static/js/angular/angular.min.js"></script>
+<script src="/static/js/angular/angular-ui.min.js"></script>
+<script src="/static/js/angular-animate/angular-animate.min.js"></script>
+<script src="/static/js/angular-route/angular-route.min.js"></script>
+<script src="/static/js/underscore/underscore-min.js"></script>
+<script src="/static/js/d3/d3.min.js"></script>
+
+<!-- Custom JS -->
+
+<script src="/static/js/constants.js"></script>
+<script src="/static/js/app.js"></script>
+<script src="/static/assets/js/controllers.min.js"></script>
+<script src="/static/assets/js/services.min.js"></script>
+<script src="/static/assets/js/directives.min.js"></script>
+</body>
+</html>

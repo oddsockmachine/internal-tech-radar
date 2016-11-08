@@ -1,0 +1,56 @@
+<div class="panel panel-primary" style="margin-bottom: 0">
+    <div class="panel-heading">
+        <b ng-hide="deleteGroup"> Adding Groups </b>
+        <b ng-show="deleteGroup"> Delete Group </b>
+        <i class="fa fa-times-circle pull-right" ng-click="close()"></i>
+    </div>
+    <div class="panel-body">
+        <div ng-show="deleteGroup">
+
+            Are you Sure about Deleting this group -- <b>{{ group }}</b> ?
+
+            <div class="panel-body">
+                <button type="submit" class="btn btn-primary btn-block" ng-click="delete()" >Delete </button>
+                <div class="btn btn-danger btn-block" ng-click="close()">Cancel</div>
+            </div>
+        </div>
+        <div ng-hide="deleteGroup">
+            <form name="groupForm" ng-submit="ok()" novalidate>
+
+                <!-- group -->
+                <div class="form-group"
+                     ng-class="{ 'has-error' : groupForm.group.$invalid && !groupForm.group.$pristine }">
+                    <label>Groups</label>
+
+                    <textarea class="form-control mB-10" ng-model="groups" name="group"
+                              required></textarea>
+
+                    <p ng-show="groupForm.group.$invalid && !groupForm.group.$pristine" class="help-block">
+                        group
+                        is
+                        required.</p>
+                    <p class="text-warning">
+                        Note: To add multiple groups add comma separated values
+                        and any space in the group name will replaced by '-'.
+                    </p>
+                </div>
+
+                <hr>
+
+                <button type="submit" class="btn btn-primary btn-block" ng-disabled="groupForm.$invalid || loading">Save
+                </button>
+                <div class="btn btn-danger btn-block" ng-click="close()">Cancel</div>
+
+            </form>
+        </div>
+
+        <div ng-if='fail' class="">
+            <div class="bg-danger panel-body text-center"
+                 ng-show="message"
+                 ng-bind-html="message">
+            </div>
+
+        </div>
+
+    </div>
+</div>

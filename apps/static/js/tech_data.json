@@ -1,0 +1,218 @@
+[
+    {
+        "label": "Adopt",
+        "categories": [
+            {
+                "label": "Tools",
+                "technologies": [
+                    {
+                        "label": "Infrastructure as code",
+                        "description": "Infrastructure as code"
+                    },
+                    {
+                        "label": "Embedded servlet containers",
+                        "description": "Embedded servlet containers"
+                    },
+                    {
+                        "label": "Silverback",
+                        "description": "Silverback"
+                    },
+                    {
+                        "label": "AppCode",
+                        "description": "AppCode"
+                    },
+                    {
+                        "label": "Jasmine paired with Node.js",
+                        "description": "Jasmine paired with Node.js"
+                    },
+                    {
+                        "label": "Immutable servers",
+                        "description": "Immutable servers"
+                    },
+                    {
+                        "label": "Graphite",
+                        "description": "Graphite"
+                    }
+                ]
+            },
+            {
+                "label": "Techniques",
+                "technologies": [
+                    {
+                        "label": "Health check pages",
+                        "description": "Health check pages"
+                    },
+                    {
+                        "label": "Windows infrastructure automation",
+                        "description": "Windows infrastructure automation"
+                    },
+                    {
+                        "label": "Guerrilla user testing",
+                        "description": "Guerrilla user testing"
+                    },
+                    {
+                        "label": "Work-in-Progress limits",
+                        "description": "Work-in-Progress limits"
+                    },
+                    {
+                        "label": "Automated deployment pipeline",
+                        "description": "Automated deployment pipeline"
+                    }
+                ]
+            },
+            {
+                "label": "Platforms",
+                "technologies": [
+                    {
+                        "label": "ATOM",
+                        "description": "ATOM"
+                    }
+                ]
+            },
+            {
+                "label": "Languages-Frameworks",
+                "technologies": [
+                    {
+                        "label": "Clojure",
+                        "description": "Clojure"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "label": "Trial",
+        "categories": [
+            {
+                "label": "Tools",
+                "technologies": [
+                    {
+                        "label": "Vagrant",
+                        "description": "Vagrant"
+                    },
+                    {
+                        "label": "Gradle",
+                        "description": "Gradle"
+                    }
+                ]
+            },
+            {
+                "label": "Techniques",
+                "technologies": [
+                    {
+                        "label": "Polyglot Persistence",
+                        "description": "Polyglot Persistence"
+                    }
+                ]
+            },
+            {
+                "label": "Platforms",
+                "technologies": [
+                    {
+                        "label": "Node.js",
+                        "description": "Node.js"
+                    },
+                    {
+                        "label": "Riak",
+                        "description": "Riak"
+                    }
+                ]
+            },
+            {
+                "label": "Languages-Frameworks",
+                "technologies": [
+                    {
+                        "label": "Domain-Specific Languages",
+                        "description": "Domain-Specific Languages"
+                    },
+                    {
+                        "label": "Scratch, Alice, and Kodu",
+                        "description": "Scratch, Alice, and Kodu"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "label": "Assess",
+        "categories": [
+            {
+                "label": "Tools",
+                "technologies": [
+                    {
+                        "label": "Logic-free markup",
+                        "description": "Logic-free markup"
+                    }
+                ]
+            },
+            {
+                "label": "Techniques",
+                "technologies": [
+                    {
+                        "label": "Deployment and scripting test tools",
+                        "description": "Deployment and scripting test tools"
+                    }
+                ]
+            },
+            {
+                "label": "Platforms",
+                "technologies": [
+                    {
+                        "label": "Calatrava",
+                        "description": "Calatrava"
+                    }
+                ]
+            },
+            {
+                "label": "Languages-Frameworks",
+                "technologies": [
+                    {
+                        "label": "F#",
+                        "description": "F#"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "label": "Hold",
+        "categories": [
+            {
+                "label": "Tools",
+                "technologies": [
+                    {
+                        "label": "Enterprise service bus",
+                        "description": "Enterprise service bus"
+                    }
+                ]
+            },
+            {
+                "label": "Techniques",
+                "technologies": [
+                    {
+                        "label": "Database based integration",
+                        "description": "Database based integration"
+                    }
+                ]
+            },
+            {
+                "label": "Platforms",
+                "technologies": [
+                    {
+                        "label": "WS-*",
+                        "description": "WS-*"
+                    }
+                ]
+            },
+            {
+                "label": "Languages-Frameworks",
+                "technologies": [
+                    {
+                        "label": "Backbone.js",
+                        "description": "Backbone.js"
+                    }
+                ]
+            }
+        ]
+    }
+]

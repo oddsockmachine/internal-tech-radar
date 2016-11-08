@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h3 class="text-center">
+                <span ng-hide="admin">Radar Groups List</span>
+                <span ng-show="admin">Radar Groups List</span>
+
+                <div ng-show="admin" class="btn btn-primary pull-right" ng-click="addGroup()"><i class="fa fa-plus"></i>
+                    Groups
+                </div>
+            </h3>
+        </div>
+        <div class="panel-body" ng-hide="loading">
+            <div class=" col-md-12" ng-show="groupList.length">
+                The list of groups for which technology radar is available are as follows,
+                <span ng-show="admin">
+                    you can either edit or delete a group. Editing a group will take you to the radar page.
+                </span>
+                <span ng-hide="admin">
+                   click on a group to see its radar.
+                </span>
+
+                <div class="panel-body">
+                    <ul class="list">
+                        <li class="" ng-repeat="group in groupList">
+                            <i class="fa fa-square"></i>
+                            <a ng-hide="admin" ng-href="#/radar/{{ group  | encodeURIComponent}}">{{ group |capitalize }}</a>
+                            <a ng-show="admin" ng-href="#/radar/{{ group | encodeURIComponent}}?update=true">{{ group |capitalize }}
+                                <i class="fa fa-pencil-square-o text-success"></i></a>
+                            <i ng-show="admin" class="fa fa-times text-danger" ng-click="deleteGroup(group)"></i>
+
+                        </li>
+                    </ul>
+                </div>
+
+
+            </div>
+            <div class="bg-info panel-body  text-center" ng-hide="groupList.length || fail">
+                There are no groups to view the radar.
+            </div>
+            <div ng-if='fail' class="">
+                <div ng-class="{blue:'bg-info panel-body text-center', red:'bg-danger panel-body text-center'}[class_name]"
+                     ng-show="message"
+                     ng-bind-html="message">
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="text-center" ng-show="loading">
+            <i class="fa fa-spin fa-spinner fa-3x"></i>
+        </div>
+
+
+    </div>
+</div>

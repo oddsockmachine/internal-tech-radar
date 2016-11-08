@@ -1,0 +1,4 @@
+---
+applications:
+- name: tech-radar
+  buildpack: https://github.com/cloudfoundry/python-buildpack

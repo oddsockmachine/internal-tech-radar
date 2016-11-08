@@ -1,0 +1,92 @@
+<div class="col-md-12">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <!--div class='scrolltop' ng-click="scrollTop()">
+                <div class='scroll icon'><i class="fa fa-4x fa-angle-up"></i></div>
+            </div-->
+            This App displays the technology radar for <label>{{ groupSelected }}</label>. The circles go by
+            <label>Adopt, Trial, Assess, Hold and Review</label> starting from the center. The four divisions are
+            <span class="Tools-Text">Tools</span>,
+            <span class="Techniques-Text">Techniques</span>,
+            <span class="Platforms-Text">Platforms</span>,
+            <span class="Languages-Text">Languages</span>.<br>
+
+            <div ng-show="update">
+                To create a technology in one of the category just click the <i class="fa fa-plus-square"></i>.
+                Once the technology is created you can
+                <i class="fa fa-edit text-info"></i> (Edit) or <i class="fa fa-times text-danger"></i> (Delete) or
+                get a quick glance using <i class="fa fa-info-circle text-info"></i> .
+            </div>
+
+            <hr class="clear">
+
+        </div>
+        <div class="text-center" ng-show="loading">
+            <i class="fa fa-spin fa-spinner fa-3x"></i>
+        </div>
+        <div ng-if='fail' class="">
+            <div ng-class="{blue:'bg-info panel-body text-center', red:'bg-danger panel-body text-center'}[class_name]"
+                 ng-show="message"
+                 ng-bind-html="message">
+            </div>
+
+        </div>
+        <div class="panel-body" ng-if="techList.length">
+            <div class="col-md-4">
+                <ul class="nav nav-tabs">
+                    <li ng-repeat="status in techList" ng-class="{active : status.active}">
+                        <a ng-click="setActive(status)">{{ status.label }}</a>
+                    </li>
+                </ul>
+                <div ng-repeat="status in techList" ng-show="status.active">
+                    <div ng-if="status !='active'" class="category"
+                         ng-repeat="category in status.categories" style="background-color: {{ category.color }}">
+                        <h5 class="text-center">
+                            <label>{{ category.label }}</label>
+                            <!--i class="fa fa-minus-square pull-right" ng-click="collapse($event)"></i-->
+                            <i class="fa fa-plus-square pull-right" ng-show="update"
+                               ng-click="addTech(category.label,status.label)"></i>
+
+                        </h5>
+                        <hr>
+                        <ul ng-if="category.technologies.length">
+                            <li>
+                                <div ng-repeat="technology in category.technologies">
+                                    <i class="fa fa-square"></i> <span data-id="label"
+                                                                       ng-class="{bold : technology.label == tech_data.label}">
+                                    {{ technology.label }}
+                                    </span>
+                                    <i class="fa fa-info-circle text-info"
+                                       ng-click="infoTech(status,technology)"></i>
+                                    <i class="fa fa-edit text-info" ng-show="update"
+                                       ng-click="editTech(category, status,technology)"></i>
+                                    <i class="fa fa-times text-danger" ng-show="update"
+                                       ng-click="removeTech(category,status, technology)"></i>
+
+                                    <div class="panel panel-primary animate-show"
+                                         ng-show="(technology.label == currentTech)">
+                                        <div class="panel-heading">
+                                            {{ technology.label }} <i class="fa fa-times pull-right"
+                                                                      ng-click="closeInfo()"></i></div>
+                                        <div class="panel-body" ng-bind-html="description"></div>
+                                    </div>
+                                </div>
+
+
+                            </li>
+
+                        </ul>
+                        <div ng-if="!category.technologies.length && !fail" class="panel-body bg-warning">
+                            There are no items under review for this category.
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8" id="tech_radar">
+                <radar-diagram height="700" width="700" class=""></radar-diagram>
+            </div>
+        </div>
+    </div>
+</div>
+

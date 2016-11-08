@@ -1,0 +1,17 @@
+.idea/.name
+.idea/
+node_modules/
+static/js/src/
+static/css/src/
+static/assets/css/
+static/assets/js/
+npm-debug.log
+tech-radar/
+MySQL-python-1.2.3.win32-py2.7.exe
+MySQL_python-1.2.5-cp27-none-win32.whl
+app_config.pyc
+application.pyc
+ez_setup.py
+models.pyc
+radarDBQuery.pyc
+techradar.log

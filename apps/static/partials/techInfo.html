@@ -1,0 +1,98 @@
+<div class="panel panel-primary" style="margin-bottom: 0">
+    <div class="panel-heading">
+        <b ng-show="tech_data.tech">{{ tech_data.tech.label }}</b>
+        <b ng-hide="tech_data.tech"> Add a technology in {{ tech_data.category }} </b>
+        <i class="fa fa-times-circle pull-right" ng-click="close()"></i>
+    </div>
+    <div class="panel-body">
+        <div class="" ng-hide="editInfo">
+            <label class="control-label"> Category :</label>
+
+            <div class="">
+                <input class="form-control" value="{{ tech_data.category }}" disabled>
+            </div>
+            <label class="control-label"> Status :</label>
+
+            <div class="">
+                <input class="form-control" value="{{ tech_data.status }}" disabled>
+            </div>
+            <label class="control-label">Description :</label>
+
+            <div class="panel-body">
+                <div class="panel-body bg-warning" ng-bind-html="description"></div>
+            </div>
+        </div>
+        <div class="" ng-show="editInfo">
+            <form name="techForm" ng-submit="ok()" novalidate>
+
+                <!-- category -->
+                <div class="form-group"
+                     ng-class="{ 'has-error' : techForm.category.$invalid && !techForm.category.$pristine }">
+                    <label>Category</label>
+                    <select class="form-control" ng-model="tech.category" required name="category"
+                            ng-show="tech_data.tech">
+                        <option ng-repeat="category in categoryList" value="{{ category }}"
+                                ng-selected="{{ category == tech_data.category }}">{{ category }}</option>
+
+                    </select>
+                    <input disabled value="{{ tech_data.category }}" name="category" class="form-control"
+                           ng-hide="tech_data.tech">
+
+                    <p ng-show="techForm.category.$invalid && !techForm.category.$pristine" class="help-block">Category
+                        is
+                        required.</p>
+
+                </div>
+                <!-- status -->
+                <div class="form-group"
+                     ng-class="{ 'has-error' : techForm.status.$invalid && !techForm.status.$pristine }">
+                    <label>Status</label>
+                    <select class="form-control" ng-model="tech.status" required name="status" ng-show="tech_data.tech">
+                        <option ng-repeat="status in statusList" value="{{ status }}"
+                                ng-selected="{{ status == tech_data.status }}">{{ status }}</option>
+
+                    </select>
+                    <input disabled value="{{ tech_data.status }}" name="status" class="form-control"
+                           ng-hide="tech_data.tech">
+
+                    <p ng-show="techForm.status.$invalid && !techForm.status.$pristine" class="help-block">Status
+                        is
+                        required.</p>
+                </div>
+                <!-- status -->
+                <div class="form-group" ng-hide="tech_data.tech"
+                     ng-class="{ 'has-error' : techForm.tech.$invalid && !techForm.tech.$pristine }">
+                    <label>Technology</label>
+
+                    <input value="" name="status" class="form-control" ng-model="tech.technology" required>
+
+                    <p ng-show="techForm.status.$invalid && !techForm.status.$pristine" class="help-block">Technology
+                        is
+                        required.</p>
+                </div>
+                <!-- description -->
+                <div class="form-group">
+                    <label>Description</label>
+
+                    <textarea class="form-control" ng-model="tech.tech.description" name="description"
+                              ></textarea>
+                </div>
+
+                <hr>
+
+                <button ng-show="tech_data.tech" type="submit" class="btn btn-primary btn-block">Save</button>
+                <button ng-hide="tech_data.tech" type="submit" class="btn btn-primary btn-block" ng-disabled="techForm.$invalid || loading">Save</button>
+                <div class="btn btn-danger btn-block" ng-click="close()">Cancel</div>
+
+            </form>
+        </div>
+        <div ng-if='fail' class="">
+            <div ng-class="{blue:'bg-info panel-body text-center', red:'bg-danger panel-body text-center'}[class_name]"
+                 ng-show="message"
+                 ng-bind-html="message">
+            </div>
+
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,69 @@
+<div class="col-md-12">
+    <div class="panel panel-default">
+
+        <div class="panel-body" ng-if="techList.length">
+            <div class="col-md-3">
+                <ul class="nav nav-tabs">
+                    <li ng-repeat="status in techList" ng-class="{active : status.active}">
+                        <a ng-click="setActive(status)">{{ status.label }}</a>
+                    </li>
+                </ul>
+                <div ng-repeat="status in techList" ng-show="status.active">
+                    <div class="category" ng-repeat="category in status.categories"
+                         style="background-color: {{ category.color }}">
+                        <h5 class="text-center">
+                            <label>{{ category.label }}</label>
+                            <i class="fa fa-minus-square pull-right" ng-click="collapse($event)"></i>
+                        </h5>
+                        <hr>
+                        <ul>
+                            <li>
+                                <div ng-repeat="technology in category.technologies">
+                                    <i class="fa fa-square"></i> {{ technology.label }}
+                                   <i class="fa fa-info-circle text-info"
+                                       ng-click="infoTech(status,technology)"></i>
+                                    <i class="fa fa-edit text-info" ng-click="editTech(category, technology)"></i>
+                                    <i class="fa fa-times text-danger" ng-click="removeTech(category, technology)"></i>
+
+                                    <div class="panel panel-primary animate-show"
+                                         ng-show="(category == currentCategory && technology == currentTech)">
+                                        <div class="panel-heading">
+                                            {{ technology.label }} <i class="fa fa-times pull-right"
+                                                                      ng-click="closeInfo()"></i></div>
+                                        <div class="panel-body">technology.description</div>
+                                    </div>
+                                </div>
+
+
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-9">
+                <radar-diagram height="700" width="700" class="col-md-8"></radar-diagram>
+                <div class="col-md-4" id="showInfo">
+                    <div class="panel animate-show" ng-show="showInfo">
+                        <div class="panel-heading" style="background-color: {{ technology.color }}">
+                            <span class="col-md-10">
+                              <label>  {{ activeCategory.label }}</label>
+                            </span>
+                            <span class="col-md-2">
+                                <i class="fa fa-times pull-right" ng-click="closeInfo()"></i>
+                            </span>
+                        </div>
+                        <div class="panel-body">
+                            <label>Label:</label>{{ technology.label }}<br>
+                            <label>Description:</label>{{ technology.description }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+

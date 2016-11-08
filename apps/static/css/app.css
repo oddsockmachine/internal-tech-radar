@@ -1,0 +1,286 @@
+/**
+
+__author__    =	"Ashwini Chandrasekar(@sriniash)"
+__email__     =	"ASHWINI_CHANDRASEKAR@homedepot.com"
+__version__   =	"1.0"
+__doc__       = "CSS file for the app"
+**/
+
+/* Status css*/
+.add-padding {
+    padding: 10px 10px;
+}
+
+.mB-10 {
+    margin-bottom: 10px !important;
+}
+
+.clear {
+    clear: both;
+}
+
+i.fa.fa-sort-up, i.fa.fa-sort-down, i.fa.fa-times, [data-id=login], [data-id=logout] {
+    cursor: pointer;
+}
+
+select option {
+    text-transform: capitalize;
+}
+
+.hero-unit {
+    margin: 50px auto 0 auto;
+    width: 300px;
+    font-size: 18px;
+    font-weight: 200;
+    line-height: 30px;
+    background-color: #eee;
+    border-radius: 6px;
+    padding: 60px;
+}
+
+.hero-unit h1 {
+    font-size: 60px;
+    line-height: 1;
+    letter-spacing: -1px;
+}
+
+input[type="text"].input-small {
+    height: 10px;
+    font-size: 9pt;
+    line-height: 10px;
+}
+
+.radar-manager ul {
+    list-style-type: none;
+    margin: 5px;
+}
+
+.new-category {
+    max-height: 25px;
+    font-size: 8pt;
+    float: right;
+    padding-right: 10px;
+    margin: 0;
+}
+
+.new-category a {
+    float: right;
+}
+
+.new-category input {
+    margin-right: 10px;
+}
+
+.active-tech {
+    /*  border-color: teal;
+  border-style: solid;
+  border-width: thin;*/
+    font-weight: bold;
+    color: #4889ff;
+}
+
+.category {
+    padding: 5px;
+@include border-radius(5 px);
+    margin-bottom: 5px;
+}
+
+.mouseover-title {
+    /*position: absolute;*/
+    color: slategrey;
+    min-height: 100px;
+
+}
+
+ul {
+    list-style-type: none;
+}
+
+.fa {
+    cursor: pointer;
+}
+
+.category h5 {
+    margin: 0;
+}
+
+.category hr {
+    margin-top: 0;
+}
+
+#showInfo .col-md-4, #showInfo .col-md-10, #showInfo .col-md-2, #showInfo .panel, #showInfo.col-md-4 {
+    padding: 0;
+}
+
+#showInfo .panel-heading {
+    min-height: 35px;
+}
+
+#showInfo .panel-body {
+    padding: 5px;
+}
+
+/* new tabs*/
+.Tools-Adopt {
+    background-color: #6baed6;
+}
+
+.Tools-Text {
+    color: #6baed6;
+    font-weight: bold;
+}
+
+.Tools-Trial {
+    background-color: #85bcdc;
+}
+
+.Tools-Assess {
+    background-color: #9ecae1;
+}
+
+.Tools-Hold {
+    background-color: #b2d3e8;
+}
+
+.Tools-Review {
+    background-color: #c6dbef;
+}
+
+.Techniques-Adopt {
+    background-color: #fd8d3c;
+}
+
+.Techniques-Text {
+    color: #fd8d3c;
+    font-weight: bold;
+}
+
+.Techniques-Trial {
+    background-color: #fd9e54;
+}
+
+.Techniques-Assess {
+    background-color: #fdae6b;
+}
+
+.Techniques-Hold {
+    background-color: #fdbf87;
+}
+
+.Techniques-Review {
+    background-color: #fdd0a2;
+}
+
+.Platforms-Adopt {
+    background-color: #74c476;
+}
+
+.Platforms-Text {
+    color: #74c476;
+    font-weight: bold;
+}
+
+.Platforms-Trial {
+    background-color: #8bcf89;
+}
+
+.Platforms-Assess {
+    background-color: #a1d99b;
+}
+
+.Platforms-Hold {
+    background-color: #b4e1ae;
+}
+
+.Platforms-Review {
+    background-color: #c7e9c0;
+}
+
+.Languages-Adopt {
+    background-color: #9e9ac8;
+}
+.Languages-Text {
+    color: #9e9ac8;
+    font-weight: bold;
+}
+
+.Languages-Trial {
+    background-color: #adacd2;
+}
+
+.Languages-Assess {
+    background-color: #bcbddc;
+}
+
+.Languages-Hold {
+    background-color: #cbcce4;
+}
+
+.Languages-Review {
+    background-color: #dadaeb;
+}
+
+.bold {
+    font-weight: bold;
+    font-size: 16px;
+    color: red;
+    display: inline-block;
+}
+span[data-id=label]{
+    display: inline-block;
+}
+a {
+    cursor: pointer;
+}
+
+#tech-radar {
+    position: relative;
+}
+
+.tooltip{
+    font-size: 14px;
+}
+
+.scrolltop {
+	display:none;
+	width:100%;
+	margin:0 auto;
+	position:fixed;
+	bottom:20px;
+	right:10px;
+    z-index: 9999;
+}
+.scroll {
+	position:absolute;
+	right:20px;
+	bottom:20px;
+	background:#b2b2b2;
+	background:rgba(178,178,178,0.7);
+	padding:20px;
+	text-align: center;
+	margin: 0 0 0 0;
+	cursor:pointer;
+	transition: 0.5s;
+	-moz-transition: 0.5s;
+	-webkit-transition: 0.5s;
+	-o-transition: 0.5s;
+}
+.scroll:hover {
+	background:rgba(178,178,178,1.0);
+	transition: 0.5s;
+	-moz-transition: 0.5s;
+	-webkit-transition: 0.5s;
+	-o-transition: 0.5s;
+}
+.scroll:hover .fa {
+	padding-top:-10px;
+}
+.scroll .fa {
+	font-size:30px;
+	margin-top:-5px;
+	margin-left:1px;
+	transition: 0.5s;
+	-moz-transition: 0.5s;
+	-webkit-transition: 0.5s;
+	-o-transition: 0.5s;
+}

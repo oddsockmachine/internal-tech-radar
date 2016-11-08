@@ -1,0 +1,21 @@
+<div class="panel panel-danger">
+    <div class="panel-heading">
+        {{ tech_data.tech.label }}
+    </div>
+    <div class="panel-body">
+        Are you sure about deleting <b>{{ tech_data.tech.label }} </b>from <b>{{ tech_data.category.label }}</b>?
+        <hr>
+        <div class="text-center">
+            <div class="btn btn-success" ng-click="ok()">Delete</div>
+            <div class="btn btn-danger" ng-click="close()">Cancel</div
+        </div>
+        <div ng-if='fail' class="">
+            <div ng-class="{blue:'bg-info panel-body text-center', red:'bg-danger panel-body text-center'}[class_name]"
+                 ng-show="message"
+                 ng-bind-html="message">
+            </div>
+
+        </div>
+
+    </div>
+</div>
