@@ -66,84 +66,12 @@ To have code deployed in container based development use docker.
 
 ##### Deployment
 1. Use the dockerfile and run the following once inside the deployment folder
-      **sudo docker build --tag=tech-radar .**
+      **docker build --tag=tech-radar .**
 2. Run docker with
       **sudo docker run -p 80:8080 -d tech-radar**
 
 Once above is completed, you should have your app up and running.
 
----
-### Using Cloud Foundry
-
-##### Setup
- 1. You need to have Cloud Foundry CLI installed if not do so from [Cloud Foundry CLI].
- 2. Make sure to have an account at one of the [Cloud Foundry endpoints].
- 3. Through CF CLI, login into the corresponding endpoint. For example, lets say you have an account for   [Console Non Production]  and want to deploy it to it,then you will have to login into [API Non Production] using
-
-        cf login
-        > Enter the API end point here
-        > Enter the email and password you have for that account
-        > Select space if any
-
- 4. If you want to use a DB then update the values for the **SQLALCHEMY_DATABASE_URI** in app_config.py with the DB info. For example for a SQL Db it would be of the following format
-    **SQLALCHEMY_DATABASE_URI = 'mysql://username:password@ip-address/db_name'**
- 5. Make sure you have the **procfile, manifest.yml, .cfignore files** under the working directory, copy the files from cloud_foundry folder into the current directory.
-
-        cp cloud_foundry/* .
- 6. **NOTE**: For Windows, there is an issue with node_modules folder whenwe deploy the code to Cloud Foundry. MAke sure to remove the node_modules folder once assests folder has all the js and css files. [node_module_issue]
-
-##### Deployment
-1. Make sure you are inside the working directory (**technology-radar**)
-2. Run the following to push the code to the endpoint
-
-        cf push technology-radar
-
-3. Once above is completed, you should have your app up and running at http://technology-radar.apps-np.homedepot.com/ .
-
-### Local Development using Virtual Environment
-You can deploy the code locally and develop it using virtualenv.
-
-##### Setup
-
-1. Make sure to have python installed in your system.
-2. Run the following commands to get the app running locally
-
-        cd technology-radar
-        virtualenv tech-radar
-        pip install -r requirements
-
-3. If you want to use a DB then update the values for the **SQLALCHEMY_DATABASE_URI** in app_config.py with the DB info. For example for a SQL Db it would be of the following format
-    **SQLALCHEMY_DATABASE_URI = 'mysql://username:password@ip-address/db_name'**
-
-##### Deployment
-1. Run the app locally with
-      **python wsgi.py**
-
-Once above is completed, you should have your app up and running.
-
-# Additional Information
-### Database Info
-There are 2 tables needed for this app to work
-
- * groups --  This table has information about the different groups in the organization and this group id is used in technology
- * technology -- This is updated through the UI, this table has information about different technologies used in the selected group.
-
-The sql file for updating the DB and schema file is also part of the codebase(**devtools.db**)
-
-### ADMIN Mode
-By default the app is visible to all, in order to have the groups/technology entered, there is a admin mode. During this mode you can update the data as needed.
-
-### Technologies
-* Python > 2.0
-* [Flask-SQLAlchemy] -- Create Models that map to the DB
-* [UnderscoreJS] -- For data manipulation
-* [AngularJS] -- Front End routing, templating,etc.
-* [Twitter Bootstrap] -- For RWD
-* [NodeJS] --  For Build Process
-* [Grunt] -- Minify and Concat all the assets
-* [jQuery] -- For some Js features
-* [D3.js] -- Data visualization
-* [Flask] -- Render the main page and API calls that make DB calls
 
 ### Based On
  Based on basic tech radar app created by [tnunamak/tech-radar].
@@ -155,24 +83,5 @@ By default the app is visible to all, in order to have the groups/technology ent
 
 Open source under Apache License v2.0 (http://www.apache.org/licenses/LICENSE-2.0)
 
-
-
-
-   [NodeJS]: <http://nodejs.org>
-   [Twitter Bootstrap]: <http://twitter.github.com/bootstrap/>
-   [jQuery]: <http://jquery.com>
-   [AngularJS]: <http://angularjs.org>
-   [Grunt]: <http://gruntjs.com>
-   [D3.js]: <http://d3js.org>
-   [UnderscoreJS]:  <http://underscorejs.org/#>
-   [Flask]: <flask.pocoo.org>
-   [Flask-SQLAlchemy]: <flask-sqlalchemy.pocoo.org/>
-   [tnunamak/tech-radar]:<https://github.com/tnunamak/tech-radar.git>
-   [Docker]: <https://docs.docker.com/engine/installation/ubuntulinux/>
-   [Cloud Foundry]: <http://pivotal.io/platform>
-   [Cloud Foundry CLI]: <https://console.run.pivotal.io/tools>
-   [Console Non Production]: <https://console.run-np.homedepot.com>
-   [API Non Production]: <https://api.run-np.homedepot.com>
-   [node_module_issue]:<https://developer.ibm.com/answers/questions/29227/why-is-cf-push-choking-on-a-file-thats-in-cfignore.html>
 
 
