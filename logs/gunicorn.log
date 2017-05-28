@@ -5032,3 +5032,473 @@ NameError: global name 'db_session' is not defined
 [2017-05-28 00:19:41 -0700] [35734] [INFO] Worker exiting (pid: 35734)
 [2017-05-28 00:19:41 -0700] [35725] [INFO] Worker exiting (pid: 35725)
 [2017-05-28 00:19:41 -0700] [35722] [INFO] Shutting down: Master
+[2017-05-28 13:07:41 -0700] [50930] [INFO] Starting gunicorn 19.3.0
+[2017-05-28 13:07:41 -0700] [50930] [INFO] Listening at: http://0.0.0.0:8080 (50930)
+[2017-05-28 13:07:41 -0700] [50930] [INFO] Using worker: sync
+[2017-05-28 13:07:41 -0700] [50933] [INFO] Booting worker with pid: 50933
+[2017-05-28 13:07:42 -0700] [50936] [INFO] Booting worker with pid: 50936
+[2017-05-28 13:07:42 -0700] [50937] [INFO] Booting worker with pid: 50937
+[2017-05-28 13:07:42 -0700] [50938] [INFO] Booting worker with pid: 50938
+[2017-05-28 13:07:42 -0700] [50939] [INFO] Booting worker with pid: 50939
+[2017-05-28 13:07:42 -0700] [50940] [INFO] Booting worker with pid: 50940
+[2017-05-28 13:07:42 -0700] [50941] [INFO] Booting worker with pid: 50941
+[2017-05-28 13:07:42 -0700] [50942] [INFO] Booting worker with pid: 50942
+[2017-05-28 13:07:42 -0700] [50943] [INFO] Booting worker with pid: 50943
+[2017-05-28 13:07:42 -0700] [50944] [INFO] Booting worker with pid: 50944
+[2017-05-28 13:07:48 -0700] [50943] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 130, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 171, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/app.py", line 1825, in wsgi_app
+    ctx.auto_pop(error)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/ctx.py", line 374, in auto_pop
+    self.pop(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/ctx.py", line 366, in pop
+    app_ctx.pop(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/ctx.py", line 175, in pop
+    self.app.do_teardown_appcontext(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/app.py", line 1727, in do_teardown_appcontext
+    func(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/apps/application.py", line 238, in shutdown_session
+    db_session.remove()
+NameError: global name 'db_session' is not defined
+[2017-05-28 13:07:50 -0700] [50940] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 130, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 171, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/app.py", line 1825, in wsgi_app
+    ctx.auto_pop(error)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/ctx.py", line 374, in auto_pop
+    self.pop(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/ctx.py", line 366, in pop
+    app_ctx.pop(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/ctx.py", line 175, in pop
+    self.app.do_teardown_appcontext(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/app.py", line 1727, in do_teardown_appcontext
+    func(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/apps/application.py", line 238, in shutdown_session
+    db_session.remove()
+NameError: global name 'db_session' is not defined
+[2017-05-28 13:07:50 -0700] [50939] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 130, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 171, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/app.py", line 1825, in wsgi_app
+    ctx.auto_pop(error)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/ctx.py", line 374, in auto_pop
+    self.pop(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/ctx.py", line 366, in pop
+    app_ctx.pop(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/ctx.py", line 175, in pop
+    self.app.do_teardown_appcontext(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/app.py", line 1727, in do_teardown_appcontext
+    func(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/apps/application.py", line 238, in shutdown_session
+    db_session.remove()
+NameError: global name 'db_session' is not defined
+[2017-05-28 13:07:51 -0700] [50944] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 130, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 171, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/app.py", line 1825, in wsgi_app
+    ctx.auto_pop(error)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/ctx.py", line 374, in auto_pop
+    self.pop(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/ctx.py", line 366, in pop
+    app_ctx.pop(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/ctx.py", line 175, in pop
+    self.app.do_teardown_appcontext(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/app.py", line 1727, in do_teardown_appcontext
+    func(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/apps/application.py", line 238, in shutdown_session
+    db_session.remove()
+NameError: global name 'db_session' is not defined
+[2017-05-28 13:07:51 -0700] [50933] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 130, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 171, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/app.py", line 1825, in wsgi_app
+    ctx.auto_pop(error)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/ctx.py", line 374, in auto_pop
+    self.pop(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/ctx.py", line 366, in pop
+    app_ctx.pop(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/ctx.py", line 175, in pop
+    self.app.do_teardown_appcontext(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/app.py", line 1727, in do_teardown_appcontext
+    func(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/apps/application.py", line 238, in shutdown_session
+    db_session.remove()
+NameError: global name 'db_session' is not defined
+[2017-05-28 13:07:51 -0700] [50941] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 130, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 171, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/app.py", line 1825, in wsgi_app
+    ctx.auto_pop(error)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/ctx.py", line 374, in auto_pop
+    self.pop(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/ctx.py", line 366, in pop
+    app_ctx.pop(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/ctx.py", line 175, in pop
+    self.app.do_teardown_appcontext(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/app.py", line 1727, in do_teardown_appcontext
+    func(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/apps/application.py", line 238, in shutdown_session
+    db_session.remove()
+NameError: global name 'db_session' is not defined
+[2017-05-28 13:07:51 -0700] [50937] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 130, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 171, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/app.py", line 1825, in wsgi_app
+    ctx.auto_pop(error)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/ctx.py", line 374, in auto_pop
+    self.pop(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/ctx.py", line 366, in pop
+    app_ctx.pop(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/ctx.py", line 175, in pop
+    self.app.do_teardown_appcontext(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/app.py", line 1727, in do_teardown_appcontext
+    func(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/apps/application.py", line 238, in shutdown_session
+    db_session.remove()
+NameError: global name 'db_session' is not defined
+[2017-05-28 13:07:51 -0700] [50942] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 130, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 171, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/app.py", line 1825, in wsgi_app
+    ctx.auto_pop(error)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/ctx.py", line 374, in auto_pop
+    self.pop(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/ctx.py", line 366, in pop
+    app_ctx.pop(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/ctx.py", line 175, in pop
+    self.app.do_teardown_appcontext(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/app.py", line 1727, in do_teardown_appcontext
+    func(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/apps/application.py", line 238, in shutdown_session
+    db_session.remove()
+NameError: global name 'db_session' is not defined
+[2017-05-28 13:07:51 -0700] [50936] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 130, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 171, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/app.py", line 1825, in wsgi_app
+    ctx.auto_pop(error)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/ctx.py", line 374, in auto_pop
+    self.pop(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/ctx.py", line 366, in pop
+    app_ctx.pop(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/ctx.py", line 175, in pop
+    self.app.do_teardown_appcontext(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/app.py", line 1727, in do_teardown_appcontext
+    func(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/apps/application.py", line 238, in shutdown_session
+    db_session.remove()
+NameError: global name 'db_session' is not defined
+[2017-05-28 13:07:51 -0700] [50938] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 130, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 171, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/app.py", line 1825, in wsgi_app
+    ctx.auto_pop(error)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/ctx.py", line 374, in auto_pop
+    self.pop(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/ctx.py", line 366, in pop
+    app_ctx.pop(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/ctx.py", line 175, in pop
+    self.app.do_teardown_appcontext(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/app.py", line 1727, in do_teardown_appcontext
+    func(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/apps/application.py", line 238, in shutdown_session
+    db_session.remove()
+NameError: global name 'db_session' is not defined
+[2017-05-28 13:08:36 -0700] [50930] [INFO] Handling signal: int
+[2017-05-28 13:08:36 -0700] [50939] [INFO] Worker exiting (pid: 50939)
+[2017-05-28 13:08:36 -0700] [50936] [INFO] Worker exiting (pid: 50936)
+[2017-05-28 13:08:36 -0700] [50944] [INFO] Worker exiting (pid: 50944)
+[2017-05-28 13:08:36 -0700] [50940] [INFO] Worker exiting (pid: 50940)
+[2017-05-28 13:08:36 -0700] [50938] [INFO] Worker exiting (pid: 50938)
+[2017-05-28 13:08:36 -0700] [50937] [INFO] Worker exiting (pid: 50937)
+[2017-05-28 13:08:36 -0700] [50941] [INFO] Worker exiting (pid: 50941)
+[2017-05-28 13:08:36 -0700] [50942] [INFO] Worker exiting (pid: 50942)
+[2017-05-28 13:08:36 -0700] [50943] [INFO] Worker exiting (pid: 50943)
+[2017-05-28 13:08:36 -0700] [50933] [INFO] Worker exiting (pid: 50933)
+[2017-05-28 13:08:36 -0700] [50930] [INFO] Shutting down: Master
+[2017-05-28 13:11:53 -0700] [51202] [INFO] Starting gunicorn 19.3.0
+[2017-05-28 13:11:53 -0700] [51202] [INFO] Listening at: http://0.0.0.0:8080 (51202)
+[2017-05-28 13:11:53 -0700] [51202] [INFO] Using worker: sync
+[2017-05-28 13:11:53 -0700] [51206] [INFO] Booting worker with pid: 51206
+[2017-05-28 13:11:53 -0700] [51208] [INFO] Booting worker with pid: 51208
+[2017-05-28 13:11:53 -0700] [51209] [INFO] Booting worker with pid: 51209
+[2017-05-28 13:11:53 -0700] [51210] [INFO] Booting worker with pid: 51210
+[2017-05-28 13:11:53 -0700] [51211] [INFO] Booting worker with pid: 51211
+[2017-05-28 13:11:53 -0700] [51212] [INFO] Booting worker with pid: 51212
+[2017-05-28 13:11:53 -0700] [51213] [INFO] Booting worker with pid: 51213
+[2017-05-28 13:11:53 -0700] [51214] [INFO] Booting worker with pid: 51214
+[2017-05-28 13:11:53 -0700] [51215] [INFO] Booting worker with pid: 51215
+[2017-05-28 13:11:54 -0700] [51216] [INFO] Booting worker with pid: 51216
+[2017-05-28 13:11:59 -0700] [51211] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 130, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 171, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/app.py", line 1825, in wsgi_app
+    ctx.auto_pop(error)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/ctx.py", line 374, in auto_pop
+    self.pop(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/ctx.py", line 366, in pop
+    app_ctx.pop(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/ctx.py", line 175, in pop
+    self.app.do_teardown_appcontext(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/app.py", line 1727, in do_teardown_appcontext
+    func(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/apps/application.py", line 238, in shutdown_session
+    db_session.remove()
+NameError: global name 'db_session' is not defined
+[2017-05-28 13:12:00 -0700] [51214] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 130, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 171, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/app.py", line 1825, in wsgi_app
+    ctx.auto_pop(error)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/ctx.py", line 374, in auto_pop
+    self.pop(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/ctx.py", line 366, in pop
+    app_ctx.pop(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/ctx.py", line 175, in pop
+    self.app.do_teardown_appcontext(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/app.py", line 1727, in do_teardown_appcontext
+    func(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/apps/application.py", line 238, in shutdown_session
+    db_session.remove()
+NameError: global name 'db_session' is not defined
+[2017-05-28 13:12:01 -0700] [51212] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 130, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 171, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/app.py", line 1825, in wsgi_app
+    ctx.auto_pop(error)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/ctx.py", line 374, in auto_pop
+    self.pop(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/ctx.py", line 366, in pop
+    app_ctx.pop(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/ctx.py", line 175, in pop
+    self.app.do_teardown_appcontext(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/app.py", line 1727, in do_teardown_appcontext
+    func(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/apps/application.py", line 238, in shutdown_session
+    db_session.remove()
+NameError: global name 'db_session' is not defined
+[2017-05-28 13:12:01 -0700] [51208] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 130, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 171, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/app.py", line 1825, in wsgi_app
+    ctx.auto_pop(error)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/ctx.py", line 374, in auto_pop
+    self.pop(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/ctx.py", line 366, in pop
+    app_ctx.pop(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/ctx.py", line 175, in pop
+    self.app.do_teardown_appcontext(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/app.py", line 1727, in do_teardown_appcontext
+    func(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/apps/application.py", line 238, in shutdown_session
+    db_session.remove()
+NameError: global name 'db_session' is not defined
+[2017-05-28 13:12:02 -0700] [51209] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 130, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 171, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/app.py", line 1825, in wsgi_app
+    ctx.auto_pop(error)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/ctx.py", line 374, in auto_pop
+    self.pop(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/ctx.py", line 366, in pop
+    app_ctx.pop(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/ctx.py", line 175, in pop
+    self.app.do_teardown_appcontext(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/app.py", line 1727, in do_teardown_appcontext
+    func(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/apps/application.py", line 238, in shutdown_session
+    db_session.remove()
+NameError: global name 'db_session' is not defined
+[2017-05-28 13:12:02 -0700] [51210] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 130, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 171, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/app.py", line 1825, in wsgi_app
+    ctx.auto_pop(error)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/ctx.py", line 374, in auto_pop
+    self.pop(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/ctx.py", line 366, in pop
+    app_ctx.pop(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/ctx.py", line 175, in pop
+    self.app.do_teardown_appcontext(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/app.py", line 1727, in do_teardown_appcontext
+    func(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/apps/application.py", line 238, in shutdown_session
+    db_session.remove()
+NameError: global name 'db_session' is not defined
+[2017-05-28 13:12:03 -0700] [51206] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 130, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 171, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/app.py", line 1825, in wsgi_app
+    ctx.auto_pop(error)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/ctx.py", line 374, in auto_pop
+    self.pop(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/ctx.py", line 366, in pop
+    app_ctx.pop(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/ctx.py", line 175, in pop
+    self.app.do_teardown_appcontext(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/app.py", line 1727, in do_teardown_appcontext
+    func(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/apps/application.py", line 238, in shutdown_session
+    db_session.remove()
+NameError: global name 'db_session' is not defined
+[2017-05-28 13:12:04 -0700] [51213] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 130, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 171, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/app.py", line 1825, in wsgi_app
+    ctx.auto_pop(error)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/ctx.py", line 374, in auto_pop
+    self.pop(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/ctx.py", line 366, in pop
+    app_ctx.pop(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/ctx.py", line 175, in pop
+    self.app.do_teardown_appcontext(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/app.py", line 1727, in do_teardown_appcontext
+    func(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/apps/application.py", line 238, in shutdown_session
+    db_session.remove()
+NameError: global name 'db_session' is not defined
+[2017-05-28 13:12:04 -0700] [51216] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 130, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 171, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/app.py", line 1825, in wsgi_app
+    ctx.auto_pop(error)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/ctx.py", line 374, in auto_pop
+    self.pop(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/ctx.py", line 366, in pop
+    app_ctx.pop(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/ctx.py", line 175, in pop
+    self.app.do_teardown_appcontext(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/app.py", line 1727, in do_teardown_appcontext
+    func(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/apps/application.py", line 238, in shutdown_session
+    db_session.remove()
+NameError: global name 'db_session' is not defined
+[2017-05-28 13:12:04 -0700] [51215] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 130, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 171, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/app.py", line 1825, in wsgi_app
+    ctx.auto_pop(error)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/ctx.py", line 374, in auto_pop
+    self.pop(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/ctx.py", line 366, in pop
+    app_ctx.pop(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/ctx.py", line 175, in pop
+    self.app.do_teardown_appcontext(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/venv/lib/python2.7/site-packages/flask/app.py", line 1727, in do_teardown_appcontext
+    func(exc)
+  File "/Users/davidwalker/projects/docker/radar_new/apps/application.py", line 238, in shutdown_session
+    db_session.remove()
+NameError: global name 'db_session' is not defined
+[2017-05-28 13:12:29 -0700] [51202] [INFO] Handling signal: int
+[2017-05-28 13:12:29 -0700] [51211] [INFO] Worker exiting (pid: 51211)
+[2017-05-28 13:12:29 -0700] [51209] [INFO] Worker exiting (pid: 51209)
+[2017-05-28 13:12:29 -0700] [51206] [INFO] Worker exiting (pid: 51206)
+[2017-05-28 13:12:29 -0700] [51214] [INFO] Worker exiting (pid: 51214)
+[2017-05-28 13:12:29 -0700] [51208] [INFO] Worker exiting (pid: 51208)
+[2017-05-28 13:12:29 -0700] [51215] [INFO] Worker exiting (pid: 51215)
+[2017-05-28 13:12:29 -0700] [51216] [INFO] Worker exiting (pid: 51216)
+[2017-05-28 13:12:29 -0700] [51212] [INFO] Worker exiting (pid: 51212)
+[2017-05-28 13:12:29 -0700] [51210] [INFO] Worker exiting (pid: 51210)
+[2017-05-28 13:12:29 -0700] [51213] [INFO] Worker exiting (pid: 51213)
+[2017-05-28 13:12:29 -0700] [51202] [INFO] Shutting down: Master

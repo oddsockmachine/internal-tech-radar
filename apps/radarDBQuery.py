@@ -113,9 +113,14 @@ def delete_technology_group(technology, group_id):
     return tech
 
 
-'''
-    get list of technologies for a group
-'''
+def get_tech_details(line):
+    parts = line.split(':')
+    if len(parts)==0:
+        return False
+    if len(parts)==1:
+        return {'label': parts[0], 'description':''}
+    return {'label': parts[0], 'description':parts[1]}
+
 
 def get_technology_list_from_repo(group_name):
     path = "./example_repos/"+str(group_name)
@@ -128,7 +133,9 @@ def get_technology_list_from_repo(group_name):
                 tech_lines = map(lambda x: x.strip(), _file.readlines())
             techs = []
             for tech in tech_lines:
-                techs.append({'label': tech.split(':')[0], 'description': 'description'})
+                details = get_tech_details(tech)
+                if details:
+                    techs.append(details)
             cat['categories'].append({'label': category, 'technologies': techs})
         data.append(cat)
     return data

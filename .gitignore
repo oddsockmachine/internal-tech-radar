@@ -14,6 +14,6 @@ application.pyc
 ez_setup.py
 models.pyc
 radarDBQuery.pyc
-logs/*
+logs/gunicorn.log
 venv
 *.pyc
