@@ -27,8 +27,8 @@ def get_group_id(group_name):
 
 
 def get_groups_list():
-    teams = map(lambda x: x.replace("./example_repos/",""), glob("./example_repos/*"))
-    teams.remove('repo_list')
+    teams = map(lambda x: x.replace("../radar_repos/",""), glob("../radar_repos/*"))
+    # teams.remove('repo_list')
     return teams
 
 
@@ -114,6 +114,8 @@ def delete_technology_group(technology, group_id):
 
 
 def get_tech_details(line):
+    if line=='\n':
+        return False
     parts = line.split(':')
     if len(parts)==0:
         return False
@@ -123,7 +125,7 @@ def get_tech_details(line):
 
 
 def get_technology_list_from_repo(group_name):
-    path = "./example_repos/"+str(group_name)
+    path = "../radar_repos/"+str(group_name)
     data = []
     for status in 'Adopt Assess Hold Trial'.split():
         cat = {'label': status, 'categories': []}
