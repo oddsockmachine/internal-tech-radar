@@ -1,0 +1,6 @@
+Take list of groups from central devops repo
+List contains paths to repo for each group
+
+For each group, regularly pull changes from their repo.
+
+Add webhook for each repo to this server, to pull repo immediately

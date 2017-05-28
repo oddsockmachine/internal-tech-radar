@@ -1,9 +1,3 @@
-
-__author__    =	"Ashwini Chandrasekar(@sriniash)"
-__email__     =	"ASHWINI_CHANDRASEKAR@homedepot.com"
-__version__   =	"1.0"
-__doc__       = "Models relating to the DB tables"
-
 import json
 
 from sqlalchemy.ext.declarative.api import DeclarativeMeta
@@ -72,8 +66,3 @@ class AlchemyEncoder(json.JSONEncoder):
             return fields
 
         return json.JSONEncoder.default(self, obj)
-
-
-
-
-

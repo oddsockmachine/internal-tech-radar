@@ -1,12 +1,8 @@
-__author__ = "Ashwini Chandrasekar(@sriniash)"
-__email__ = "ASHWINI_CHANDRASEKAR@homedepot.com"
-__version__ = "1.0"
-__doc__ = "DB query made from here"
-
 import json
 from apps.models import Groups, Technology, AlchemyEncoder
 from apps.app_config import db_session
-
+from pprint import pprint
+from glob import glob
 def create_table():
     db_session.create_all()
     return True
@@ -19,8 +15,9 @@ def create_table():
 
 
 def get_group_id(group_name):
+    return group_name
     groups = Groups.query.filter_by(group=group_name).first().id
-
+    print("get_group_id", group_name, groups)
     return groups
 
 
@@ -30,12 +27,17 @@ def get_group_id(group_name):
 
 
 def get_groups_list():
-    group_list = db_session.query(Groups.group).all()
-    groups = []
-    for group in group_list:
-        groups.append(group[0])
-
-    return groups
+    # group_list = db_session.query(Groups.group).all()
+    # groups = []
+    # for group in group_list:
+    #     pprint(group)
+    #     groups.append(group[0])
+    # print("get_groups_list")
+    # pprint(groups)
+    # return groups
+    teams = map(lambda x: x.replace("./example_repos/",""), glob("./example_repos/*"))
+    teams.remove('repo_list')
+    return teams
 
 
 '''
@@ -70,7 +72,8 @@ def delete_groups(group_name):
 
 def get_technology_by_group(technology, group_id):
     tech = Technology.query.filter_by(technology=technology, group=group_id).first()
-
+    print(get_technology_by_group)
+    pprint(tech)
     return tech
 
 
@@ -122,106 +125,127 @@ def delete_technology_group(technology, group_id):
     get list of technologies for a group
 '''
 
+def get_technology_list_from_repo(group_name):
+    path = "./example_repos/"+str(group_name)
+    data = []
+    for status in 'Adopt assess Hold Trial'.split():
+        cat = {'label': status, 'categories': []}
+        for category in 'Languages Platforms Techniques Tools'.split():
+            filename = path+'/'+category+'/'+status
+            with open(filename, 'r') as _file:
+                tech_lines = map(lambda x: x.strip(), _file.readlines())
+            techs = []
+            for tech in tech_lines:
+                techs.append({'label': tech.split(':')[0], 'description': 'description'})
+            cat['categories'].append({'label': category, 'technologies': techs})
+        data.append(cat)
+    return data
 
-def get_technology_list(group_id):
-    tech_list = Technology.query.filter_by(group=group_id).all()
 
-    json_data = [
-        {
-            "label": "Adopt",
-            "categories": [
-                {
-                    "label": "Tools",
-                    "technologies": []
-                },
-                {
-                    "label": "Techniques",
-                    "technologies": []
-                },
-                {
-                    "label": "Platforms",
-                    "technologies": []
-                },
-                {
-                    "label": "Languages",
-                    "technologies": []
-                }
-            ]
-        },
-        {
-            "label": "Trial",
-            "categories": [
-                {
-                    "label": "Tools",
-                    "technologies": []
-                },
-                {
-                    "label": "Techniques",
-                    "technologies": []
-                },
-                {
-                    "label": "Platforms",
-                    "technologies": []
-                },
-                {
-                    "label": "Languages",
-                    "technologies": []
-                }
-            ]
-        },
-        {
-            "label": "Assess",
-            "categories": [
-                {
-                    "label": "Tools",
-                    "technologies": []
-                },
-                {
-                    "label": "Techniques",
-                    "technologies": []
-                },
-                {
-                    "label": "Platforms",
-                    "technologies": []
-                },
-                {
-                    "label": "Languages",
-                    "technologies": []
-                }
-            ]
-        },
-        {
-            "label": "Hold",
-            "categories": [
-                {
-                    "label": "Tools",
-                    "technologies": []
-                },
-                {
-                    "label": "Techniques",
-                    "technologies": []
-                },
-                {
-                    "label": "Platforms",
-                    "technologies": []
-                },
-                {
-                    "label": "Languages",
-                    "technologies": []
-                }
-            ]
-        }
-    ]
-
-    for tech in tech_list:
-        tech_data = json.loads(json.dumps(tech, cls=AlchemyEncoder))
-        for status in json_data:
-            if status['label'] == tech_data['status']:
-                for category in status['categories']:
-                    if category['label'] == tech_data['category']:
-                        tech_cat_data = dict()
-                        tech_cat_data['label'] = tech_data['technology']
-                        tech_cat_data['description'] = tech_data['description']
-                        category['technologies'].append(tech_cat_data)
-
+def get_technology_list(group_name):
+# def get_technology_list(group_id):
+    # tech_list = Technology.query.filter_by(group=group_id).all()
+    # print("get_technology_list")
+    # pprint(tech_list)
+    # print("FROM REPO")
+    # pprint(get_technology_list_from_repo(group_id))
+    # json_data = [
+    #     {
+    #         "label": "Adopt",
+    #         "categories": [
+    #             {
+    #                 "label": "Tools",
+    #                 "technologies": []
+    #             },
+    #             {
+    #                 "label": "Techniques",
+    #                 "technologies": []
+    #             },
+    #             {
+    #                 "label": "Platforms",
+    #                 "technologies": []
+    #             },
+    #             {
+    #                 "label": "Languages",
+    #                 "technologies": []
+    #             }
+    #         ]
+    #     },
+    #     {
+    #         "label": "Trial",
+    #         "categories": [
+    #             {
+    #                 "label": "Tools",
+    #                 "technologies": []
+    #             },
+    #             {
+    #                 "label": "Techniques",
+    #                 "technologies": []
+    #             },
+    #             {
+    #                 "label": "Platforms",
+    #                 "technologies": []
+    #             },
+    #             {
+    #                 "label": "Languages",
+    #                 "technologies": []
+    #             }
+    #         ]
+    #     },
+    #     {
+    #         "label": "Assess",
+    #         "categories": [
+    #             {
+    #                 "label": "Tools",
+    #                 "technologies": []
+    #             },
+    #             {
+    #                 "label": "Techniques",
+    #                 "technologies": []
+    #             },
+    #             {
+    #                 "label": "Platforms",
+    #                 "technologies": []
+    #             },
+    #             {
+    #                 "label": "Languages",
+    #                 "technologies": []
+    #             }
+    #         ]
+    #     },
+    #     {
+    #         "label": "Hold",
+    #         "categories": [
+    #             {
+    #                 "label": "Tools",
+    #                 "technologies": []
+    #             },
+    #             {
+    #                 "label": "Techniques",
+    #                 "technologies": []
+    #             },
+    #             {
+    #                 "label": "Platforms",
+    #                 "technologies": []
+    #             },
+    #             {
+    #                 "label": "Languages",
+    #                 "technologies": []
+    #             }
+    #         ]
+    #     }
+    # ]
+    #
+    # for tech in tech_list:
+    #     tech_data = json.loads(json.dumps(tech, cls=AlchemyEncoder))
+    #     for status in json_data:
+    #         if status['label'] == tech_data['status']:
+    #             for category in status['categories']:
+    #                 if category['label'] == tech_data['category']:
+    #                     tech_cat_data = dict()
+    #                     tech_cat_data['label'] = tech_data['technology']
+    #                     tech_cat_data['description'] = tech_data['description']
+    #                     category['technologies'].append(tech_cat_data)
+    # pprint(json_data)
+    json_data = get_technology_list_from_repo(group_name)
     return json_data

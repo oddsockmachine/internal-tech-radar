@@ -1,8 +1,3 @@
-__author__ = "Ashwini Chandrasekar(@sriniash)"
-__email__ = "ASHWINI_CHANDRASEKAR@homedepot.com"
-__version__ = "1.0"
-__doc__ = "Application db config"
-
 import os, json
 
 from sqlalchemy.engine import create_engine

@@ -1,16 +1,9 @@
-from apps.app_config import db_session
-
-__author__ = "Ashwini Chandrasekar(@sriniash)"
-__email__ = "ASHWINI_CHANDRASEKAR@homedepot.com"
-__version__ = "1.0"
-__doc__ = "Main Application file where all the API's are defined"
-
 from flask import Flask, request
 from flask.templating import render_template
 from flask.wrappers import Response
 import logging, json, sys
 
-from apps.radarDBQuery import create_table,get_group_id, update_technology_group, add_technology_group, get_technology_list, \
+from radarDBQuery import create_table,get_group_id, update_technology_group, add_technology_group, get_technology_list, \
     delete_technology_group, get_groups_list, add_groups, delete_groups
 
 

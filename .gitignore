@@ -14,4 +14,6 @@ application.pyc
 ez_setup.py
 models.pyc
 radarDBQuery.pyc
-techradar.log
+logs/*
+venv
+*.pyc
