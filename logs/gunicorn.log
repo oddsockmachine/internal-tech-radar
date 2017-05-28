@@ -5020,3 +5020,15 @@ Traceback (most recent call last):
   File "/Users/davidwalker/projects/docker/radar_new/apps/application.py", line 238, in shutdown_session
     db_session.remove()
 NameError: global name 'db_session' is not defined
+[2017-05-28 00:19:41 -0700] [35722] [INFO] Handling signal: int
+[2017-05-28 00:19:41 -0700] [35736] [INFO] Worker exiting (pid: 35736)
+[2017-05-28 00:19:41 -0700] [35731] [INFO] Worker exiting (pid: 35731)
+[2017-05-28 00:19:41 -0700] [35735] [INFO] Worker exiting (pid: 35735)
+[2017-05-28 00:19:41 -0700] [35732] [INFO] Worker exiting (pid: 35732)
+[2017-05-28 00:19:41 -0700] [35733] [INFO] Worker exiting (pid: 35733)
+[2017-05-28 00:19:41 -0700] [35729] [INFO] Worker exiting (pid: 35729)
+[2017-05-28 00:19:41 -0700] [35730] [INFO] Worker exiting (pid: 35730)
+[2017-05-28 00:19:41 -0700] [35728] [INFO] Worker exiting (pid: 35728)
+[2017-05-28 00:19:41 -0700] [35734] [INFO] Worker exiting (pid: 35734)
+[2017-05-28 00:19:41 -0700] [35725] [INFO] Worker exiting (pid: 35725)
+[2017-05-28 00:19:41 -0700] [35722] [INFO] Shutting down: Master

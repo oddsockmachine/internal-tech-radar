@@ -1,0 +1,1 @@
+for repo in `cat example_repos/repo_list`; do git clone $repo && pushd $repo && git pull && popd ; done

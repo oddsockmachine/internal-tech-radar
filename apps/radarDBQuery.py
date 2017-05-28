@@ -16,9 +16,9 @@ def create_table():
 
 def get_group_id(group_name):
     return group_name
-    groups = Groups.query.filter_by(group=group_name).first().id
-    print("get_group_id", group_name, groups)
-    return groups
+    # groups = Groups.query.filter_by(group=group_name).first().id
+    # print("get_group_id", group_name, groups)
+    # return groups
 
 
 '''
@@ -27,14 +27,6 @@ def get_group_id(group_name):
 
 
 def get_groups_list():
-    # group_list = db_session.query(Groups.group).all()
-    # groups = []
-    # for group in group_list:
-    #     pprint(group)
-    #     groups.append(group[0])
-    # print("get_groups_list")
-    # pprint(groups)
-    # return groups
     teams = map(lambda x: x.replace("./example_repos/",""), glob("./example_repos/*"))
     teams.remove('repo_list')
     return teams
@@ -128,7 +120,7 @@ def delete_technology_group(technology, group_id):
 def get_technology_list_from_repo(group_name):
     path = "./example_repos/"+str(group_name)
     data = []
-    for status in 'Adopt assess Hold Trial'.split():
+    for status in 'Adopt Assess Hold Trial'.split():
         cat = {'label': status, 'categories': []}
         for category in 'Languages Platforms Techniques Tools'.split():
             filename = path+'/'+category+'/'+status
