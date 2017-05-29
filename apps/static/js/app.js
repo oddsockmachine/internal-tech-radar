@@ -43,9 +43,6 @@ cuApp.config(['$routeProvider',
             }).when('/groups', {
                 templateUrl: '/static/partials/groups.html',
                 controller: 'GroupController'
-            }).when('/admin', {
-                templateUrl: '/static/partials/groups.html',
-                controller: 'GroupController'
             }).
             otherwise({
                 redirectTo: '/groups'
